@@ -3,7 +3,7 @@ import { AttendanceResponse, Student } from "../types";
 
 // Initialize Gemini client
 // The API key is injected from the environment
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 export const verifyAttendance = async (
   imageBase64: string,
@@ -29,7 +29,7 @@ export const verifyAttendance = async (
     // Add known students to the prompt context for comparison
     if (knownStudents.length > 0) {
       parts.push({ text: "Reference Images (Registered Students Database):" });
-      
+
       knownStudents.forEach(student => {
         if (student.avatar) {
           const studentImage = student.avatar.replace(/^data:image\/\w+;base64,/, "");
