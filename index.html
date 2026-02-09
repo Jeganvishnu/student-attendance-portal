@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Attendance Portal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+
+
+  <script>
+    window.onerror = function (message, source, lineno, colno, error) {
+      const div = document.createElement('div');
+      div.style.position = 'fixed';
+      div.style.top = '0';
+      div.style.left = '0';
+      div.style.width = '100%';
+      div.style.backgroundColor = '#ff0000';
+      div.style.color = '#ffffff';
+      div.style.padding = '12px';
+      div.style.zIndex = '999999';
+      div.style.fontFamily = 'monospace';
+      div.textContent = `Error: ${message} (${source}:${lineno})`;
+      document.body.appendChild(div);
+    };
+    window.addEventListener('unhandledrejection', function (event) {
+      const div = document.createElement('div');
+      div.style.position = 'fixed';
+      div.style.top = '40px';
+      div.style.left = '0';
+      div.style.width = '100%';
+      div.style.backgroundColor = '#d35400';
+      div.style.color = '#ffffff';
+      div.style.padding = '12px';
+      div.style.zIndex = '999999';
+      div.style.fontFamily = 'monospace';
+      div.textContent = `Unhandled Promise Rejection: ${event.reason}`;
+      document.body.appendChild(div);
+    });
+  </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

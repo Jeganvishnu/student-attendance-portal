@@ -1,0 +1,7 @@
+{
+  "name": "Student Attendance Portal",
+  "description": "AI-powered student attendance system using face recognition via Gemini 2.5 Flash.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
